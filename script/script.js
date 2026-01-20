@@ -1,24 +1,17 @@
-let selectColor = document.getElementById("selectColor");
-let selectFont = document.getElementById("selectFont");
-let selectBg = document.getElementById("selectBg");
+let estilos = [
+  { color: "white", bg: "black", font: "Arial" },
+  { color: "black", bg: "pink", font: "Georgia" },
+  { color: "blue", bg: "yellow", font: "Verdana" }
+];
 
-let boton = document.getElementById("aplicar");
+let boton = document.getElementById("btn");
 
 boton.addEventListener("click", () => {
 
-  // value = lo que eligió el usuario
-  let color = selectColor.value;
-  let fuente = selectFont.value;
-  let fondo = selectBg.value;
+  let i = Math.floor(Math.random() * estilos.length);
 
-  document.body.style.backgroundColor = fondo;
-  document.body.style.color = color;
-  document.body.style.fontFamily = fuente;
-
-  alert(
-    "Color: " + color +
-    " | Fuente: " + fuente +
-    " | Fondo: " + fondo
-  );
+  document.body.style.color = estilos[i].color;
+  document.body.style.backgroundColor = estilos[i].bg;
+  document.body.style.fontFamily = estilos[i].font;
 
 });
