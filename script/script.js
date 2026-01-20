@@ -1,26 +1,24 @@
-// Arreglos
+let selectColor = document.getElementById("selectColor");
+let selectFont = document.getElementById("selectFont");
+let selectBg = document.getElementById("selectBg");
 
-let fuentes = ["Arial", "Georgia", "Courier New", "Verdana"];
+let boton = document.getElementById("aplicar");
 
-let fondos = ["black", "pink", "lightblue", "yellow"];
-
-let coloresTexto = ["white", "red", "blue", "green"];
-
-// Traemos elementos del HTML
-let texto = document.getElementById("texto");
-let boton = document.getElementById("btn");
-
-// Evento click
 boton.addEventListener("click", () => {
 
-  // Indices aleatorios
-  let indFuente = Math.floor(Math.random() * fuentes.length);
-  let indFondo = Math.floor(Math.random() * fondos.length);
-  let indColor = Math.floor(Math.random() * coloresTexto.length);
+  // value = lo que eligió el usuario
+  let color = selectColor.value;
+  let fuente = selectFont.value;
+  let fondo = selectBg.value;
 
-  //  Aplicamos estilos
-  texto.style.fontFamily = fuentes[indFuente];
-  document.body.style.backgroundColor = fondos[indFondo];
-  texto.style.color = coloresTexto[indColor];
+  document.body.style.backgroundColor = fondo;
+  document.body.style.color = color;
+  document.body.style.fontFamily = fuente;
+
+  alert(
+    "Color: " + color +
+    " | Fuente: " + fuente +
+    " | Fondo: " + fondo
+  );
 
 });
